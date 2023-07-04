@@ -6,7 +6,8 @@ def getFtpPublishProfile(def publishProfilesJson) {
     if (p['publishMethod'] == 'FTP')
       return [url: p.publishUrl, username: p.userName, password: p.userPWD]
 }
-
+pipeline{
+  agent any{
 node {
   withEnv(['AZURE_SUBSCRIPTION_ID=<79fbf3cc-259d-457c-bc08-b52560e2f0a6>',
         'AZURE_TENANT_ID=<efce57aa-4ecc-4454-8451-82234c9c49c4>']) {
@@ -36,5 +37,7 @@ node {
       // log out
       sh 'az logout'
     }
+  }
+}
   }
 }
