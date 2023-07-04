@@ -11,6 +11,7 @@ pipeline{
 node {
   withEnv(['AZURE_SUBSCRIPTION_ID=<79fbf3cc-259d-457c-bc08-b52560e2f0a6>',
         'AZURE_TENANT_ID=<efce57aa-4ecc-4454-8451-82234c9c49c4>']) {
+    stages{
     stage('init') {
       checkout scm
     }
@@ -38,6 +39,7 @@ node {
       sh 'az logout'
     }
   }
+}
 }
   
 }
