@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: calculator
-        image: <image>:$version
+        image: docker push nikitha2109/your-image-name:1.0.2
         ports:
         - containerPort: 8080
       imagePullSecrets:
