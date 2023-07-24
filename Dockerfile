@@ -5,11 +5,12 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the application jar file into the container
-COPY your-java-application.jar /app/
+COPY calculator-1.0.war /app/
 
 # Expose any necessary ports (if your application requires it)
 EXPOSE 8080
 
 # Set the entry point to start the Java application
-ENTRYPOINT ["java", "-jar", "your-java-application.jar"]
+ENTRYPOINT ["java", "-jar", "calculator-1.0.war"]
+
 
